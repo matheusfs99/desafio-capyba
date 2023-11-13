@@ -37,3 +37,11 @@ class UserViewSet(viewsets.ModelViewSet):
             return Response({"token": token.key}, status=status.HTTP_200_OK)
 
         return Response({"error": "Invalid credentials"}, status=status.HTTP_401_UNAUTHORIZED)
+
+    @action(methods=("post",), detail=False, url_path="logout")
+    def logout(self, request):
+        try:
+            request.user.auth_token.delete()
+            return Response({"message": "User successfully logged out"}, status=status.HTTP_200_OK)
+        except Exception as e:
+            return Response({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
