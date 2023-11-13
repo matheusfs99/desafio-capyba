@@ -24,5 +24,6 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("api/account/", include("apps.accounts.urls")),
     path("api/terms/", include("apps.terms.urls")),
+    path("api/collaborators/", include("apps.collaborators.urls")),
     path("api-token-auth/", obtain_auth_token, name="api_token_auth"),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
