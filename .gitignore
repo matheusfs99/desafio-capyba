@@ -4,4 +4,4 @@
 *__pycache__
 .pytest_cache
 user_photos/
-pdf_files/
+media/
