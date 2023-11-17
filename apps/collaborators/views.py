@@ -10,8 +10,8 @@ class CollaboratorsViewSet(viewsets.ModelViewSet):
     queryset = Collaborator.objects.all()
     serializer_class = CollaboratorsSerializer
     filter_backends = [DjangoFilterBackend, OrderingFilter]
-    filterset_fields = ["name", "role"]
-    ordering_fields = ["name", "salary"]
+    filterset_fields = ("name", "role", "active")
+    ordering_fields = ("name", "salary")
 
     def get_queryset(self):
         user = self.request.user
