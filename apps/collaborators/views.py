@@ -1,11 +1,11 @@
-from rest_framework import permissions
+from rest_framework import viewsets, permissions
+from rest_framework.response import Response
 from .serializers import CollaboratorsSerializer
 from .models import Collaborator
 from apps.utils.permissions import ReadOnlyPermission
-from ..utils.mixins import CustomModelViewSet
 
 
-class CollaboratorsViewSet(CustomModelViewSet):
+class CollaboratorsViewSet(viewsets.ModelViewSet):
     queryset = Collaborator.objects.all()
     serializer_class = CollaboratorsSerializer
 
