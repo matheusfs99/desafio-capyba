@@ -19,6 +19,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     is_active = models.BooleanField(_("active"), default=True)
     date_joined = models.DateTimeField(_("date joined"), default=timezone.now)
     photo = models.ImageField(_("photo"), upload_to="images/", null=True,blank=True)
+    validated = models.BooleanField("validated", default=False)
 
     objects = UserManager()
 
@@ -38,3 +39,10 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     def email_user(self, subject, message, from_email=None, **kwargs):
         send_mail(subject, message, from_email, [self.email], **kwargs)
+
+    def validate_user(self):
+        if not self.validated:
+            self.validated = True
+            self.save()
+            return True
+        return False

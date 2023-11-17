@@ -52,10 +52,10 @@ class UserAdmin(BaseUserAdmin):
     add_form = UserCreationForm
 
     list_display = ("username", "first_name", "last_name", "email")
-    list_filter = ("is_active", "is_superuser")
+    list_filter = ("is_active", "is_superuser", "validated")
     fieldsets = (
         (None, {"fields": ("username", "password")}),
-        ("Personal info", {"fields": ("first_name", "last_name", "email", "photo")}),
+        ("Personal info", {"fields": ("first_name", "last_name", "email", "photo", "validated")}),
         ("Permissions", {"fields": ("is_active", "is_staff", "is_superuser")}),
         ("Important dates", {"fields": ("last_login", "date_joined")}),
     )

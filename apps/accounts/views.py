@@ -9,6 +9,7 @@ from rest_framework import status
 
 from .serializers import UserSerializer
 from .models import User
+from .tasks import send_email, generate_token, validate_token
 
 
 class UserViewSet(viewsets.ModelViewSet):
@@ -45,3 +46,25 @@ class UserViewSet(viewsets.ModelViewSet):
             return Response({"message": "User successfully logged out"}, status=status.HTTP_200_OK)
         except Exception as e:
             return Response({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+    @action(methods=("post",), detail=True, url_path="send-email-confirmation")
+    def send_email_confirmation(self, request, pk):
+        user = self.get_object()
+        email = user.email
+        token = generate_token(user.id)
+        send_email(
+            email,
+            "Confirmação de email",
+            f"Token: {token}"
+        )
+        return Response({"message": "email enviado com sucesso"})
+
+    @action(methods=("post",), detail=True, url_path="validate-confirmation-token")
+    def validate_confirmation_token(self, request, pk):
+        user = self.get_object()
+        token = request.data.get("token")
+
+        validate = validate_token(token, user)
+        if validate:
+            return Response({"message": "usuário validado com sucesso"})
+        return Response({"message": "usuário já validado"})
