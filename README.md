@@ -50,3 +50,6 @@ pytest
 4. Copie as credenciais clicando em "copy" e cole no .env do projeto sem as aspas e sem espaços entre a variável, o simbolo de atribuição(=) e o valor corrspondente
 5. Faça o teste executando o endpoint de envio de email
 6. O email chegará no inbox do mailtrap![img_3.png](doc_files/img_3.png)
+
+## Requisições no Insomnia
+[![Run in Insomnia}](https://insomnia.rest/images/run.svg)](https://insomnia.rest/run/?label=Desafio%20Capyba&uri=https%3A%2F%2Fraw.githubusercontent.com%2Fmatheusfs99%2Fdesafio-capyba%2Fmain%2Fdoc_files%2FInsomnia_Desafio_Capyba.json%3Ftoken%3DGHSAT0AAAAAACKDQ2H77D24JL6LPQ35KTTCZK4XL7Q)
