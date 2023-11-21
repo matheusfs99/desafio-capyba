@@ -18,7 +18,7 @@ class User(AbstractBaseUser, PermissionsMixin):
         help_text=_("Designates whether the user can log into this admin site."))
     is_active = models.BooleanField(_("active"), default=True)
     date_joined = models.DateTimeField(_("date joined"), default=timezone.now)
-    photo = models.ImageField(_("photo"), upload_to="images/", null=True,blank=True)
+    photo = models.ImageField(_("photo"), upload_to="images/", null=True, blank=True)
     validated = models.BooleanField("validated", default=False)
 
     objects = UserManager()
