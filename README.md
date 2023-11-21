@@ -15,11 +15,11 @@ cd dojo_recife_api
 python -m venv venv
 ```
 3. Ative o virtualenv. 
-Unix:
+ - Unix:
 ```console
 source venv/bin/activate
 ```
-Windows:
+ - Windows:
 ```console
 venv/Scripts/activate
 ```
