@@ -9,6 +9,7 @@ from apps.utils.permissions import ReadOnlyPermission
 class CollaboratorsViewSet(viewsets.ModelViewSet):
     queryset = Collaborator.objects.all()
     serializer_class = CollaboratorsSerializer
+    ordering = ["id"]
     filter_backends = [DjangoFilterBackend, OrderingFilter]
     filterset_fields = ("name", "role", "active")
     ordering_fields = ("name", "salary")
