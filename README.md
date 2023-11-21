@@ -10,7 +10,7 @@ git clone git@github.com:matheusfs99/desafio-capyba.git
 cd dojo_recife_api
 ```
 
-2. Crie um virtualenv com Python 3.8
+2. Crie um virtualenv com Python 3.11
 ```console
 python -m venv venv
 ```
