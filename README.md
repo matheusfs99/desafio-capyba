@@ -14,12 +14,13 @@ cd dojo_recife_api
 ```console
 python -m venv venv
 ```
-3. Ative o virtualenv.
-```console
+3. Ative o virtualenv. 
 Unix:
+```console
 source venv/bin/activate
-
+```
 Windows:
+```console
 venv/Scripts/activate
 ```
 4. Instale as dependências.
