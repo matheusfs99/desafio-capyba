@@ -11,5 +11,8 @@ register(TermsFactory)
 
 
 @pytest.fixture
-def api_client():
-    return APIClient()
+def api_client(user):
+    user.validated = True
+    client = APIClient()
+    client.force_authenticate(user)
+    return client
