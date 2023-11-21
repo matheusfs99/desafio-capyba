@@ -39,7 +39,7 @@ pytest
 ### Extra:
  - Gere uma SECRET_KEY executando o comando:
     ```console
-   python contrib/secret_gen.py
+   python utils/secret_gen.py
    ```
    e insira essa secret_key no seu .env
 
