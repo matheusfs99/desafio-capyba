@@ -53,3 +53,12 @@ pytest
 
 ## Requisições no Insomnia
 [![Run in Insomnia}](https://insomnia.rest/images/run.svg)](https://insomnia.rest/run/?label=Desafio%20Capyba&uri=https%3A%2F%2Fraw.githubusercontent.com%2Fmatheusfs99%2Fdesafio-capyba%2Fmain%2Fdoc_files%2FInsomnia_Desafio_Capyba.json%3Ftoken%3DGHSAT0AAAAAACKDQ2H77D24JL6LPQ35KTTCZK4XL7Q)
+
+## Acesso admin
+O admin do django está habilitado. Para acessá-lo, rode o seguinte comando:
+```console
+python manage.py createsuperuser
+```
+e preencha os dados solicitados para criação de um super usuário.
+
+A url para acessar o admin é http://localhost:8000/admin
